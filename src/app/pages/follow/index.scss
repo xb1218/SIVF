@@ -1,0 +1,154 @@
+.follow {
+  // width: calc(100vw - 220px);
+  .card {
+    .title {
+      .flag {
+        vertical-align: sub;
+      }
+    }
+  }
+  .con {
+    display: flex;
+  }
+  .entry {
+    padding: 25px;
+    margin: 5px;
+    /* width: -webkit-fill-available; */
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px #e5e7e9;
+    display: flex;
+    flex-wrap: wrap;
+
+    .select {
+      margin-right: 15px;
+      width: 130px;
+    }
+
+    .display_flex {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    .display_flex_end {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  .flexPosition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5px 5px 5px;
+  }
+
+  .SelectRowPatient {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 40px;
+    align-items: center;
+
+    span {
+      display: inline-block;
+      width: 130px;
+    }
+
+    span:nth-child(4),
+    span:nth-child(5) {
+      display: inline-block;
+      width: 185px;
+    }
+  }
+}
+.followDetail {
+  .content {
+    display: flex;
+  }
+}
+.notshow {
+  display: none;
+}
+.textBlue {
+  color: #59b4f4;
+}
+
+// 出生后的选择
+.divBlueTitle {
+  margin-left: 20px;
+  color: #59b4f4;
+}
+.item {
+  display: inline-block;
+  margin: 16px;
+  height: 24px;
+  width: 80px;
+  line-height: 24px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 0px 10px;
+  text-align: center;
+  border: 1px solid #b3b3b3;
+}
+.item:hover {
+  color: #59b4f4;
+  cursor: pointer;
+  border: 1px solid #59b4f4;
+}
+.checkItem {
+  display: inline-block;
+  margin: 16px;
+  height: 24px;
+  width: 80px;
+  line-height: 23px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 0px 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #59b4f4;
+  color: #fff;
+}
+//出生后男女性别tab样式
+.tabsexcheck {
+  display: inline-block;
+  margin: 0 0 5px 0;
+  height: 24px;
+  width: 42px;
+  line-height: 24px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #59b4f4;
+  color: #fff;
+}
+.tabsexitem {
+  display: inline-block;
+  margin: 0 0 5px 0;
+  height: 24px;
+  width: 42px;
+  line-height: 24px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #b3b3b3;
+}
+// 选择人工授精或体外受精
+.checkIns {
+  display: inline-block;
+  background-color: #59b4f4;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.rowStyle {
+  // background-color: #eef7fd;
+  background-color: #59b4f4 !important;
+}

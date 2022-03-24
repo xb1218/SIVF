@@ -1,0 +1,292 @@
+.diagnosis {
+  background: #ffffff;
+  box-shadow: 0px 2px 6px 0px rgba(138, 138, 138, 0.2);
+}
+#option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 10px;
+  span {
+    display: inline-block;
+  }
+}
+.doctorActive {
+  padding-left: 10px;
+  .extra {
+    display: flex;
+    align-items: center;
+  }
+
+  .add_button {
+    width: 46px;
+    height: 30px;
+    background: rgba(89, 180, 244, 0.2);
+    border-radius: 4px;
+    border: 1px dashed #59b4f4;
+    display: inline-block;
+    color: #59b4f4;
+    text-align: center;
+  }
+}
+.femaleFactors {
+  height: 60px;
+  color: #59b4f4;
+  line-height: 25px;
+  flex-direction: row;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+.diagnosis_content {
+  margin: 20px 0 0 0px;
+  min-height: 20px;
+}
+#itemsP {
+  margin-left: 20px;
+  padding-left: 15px;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 4px 6px;
+  .spanOne {
+    width: 30%;
+    display: inline-block;
+  }
+  .spanRed {
+    color: #ff0000;
+    border-bottom: 1px solid #ff0000;
+  }
+  .spanGreen {
+    color: #52c41a;
+    border-bottom: 1px solid #52c41a;
+  }
+  .spanRight {
+    float: right;
+    margin-right: 20px;
+  }
+}
+.colorBlue {
+  color: #fff;
+  background-color: #59b4f4;
+}
+.colorZi {
+  color: #59b4f4;
+}
+.buttonRight {
+  float: right;
+  vertical-align: top;
+  margin-bottom: 15px;
+}
+
+.selectDic {
+  vertical-align: top;
+  display: inline-block;
+  width: 130px;
+}
+
+.buttonDiv {
+  vertical-align: top !important;
+}
+.flexDiv {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 15px;
+}
+.switchButton {
+  margin: 15px 10px;
+  min-width: 65px;
+  .ant-switch-inner {
+    margin: 0 !important;
+  }
+}
+.buttonCheck {
+  color: #fff !important;
+  background: #59b4f4 !important;
+  border: 1px solid #59b4f4;
+}
+#ant .ant-switch-inner {
+  margin: -9px 14px 0 13px !important;
+}
+#pointerSpan {
+  cursor: pointer;
+}
+#listDia {
+  margin-top: 20px;
+  .listHeader {
+    height: 18px;
+    .spanList {
+      padding-right: 30px;
+    }
+    .spanDown {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .circleSpanDia {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #59b4f4;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+  }
+  .itemDiv {
+    margin-left: 5px;
+    padding: 6px 5px;
+    transition: height 0.5s;
+    border-left: 1px solid #e2e2e2;
+  }
+  .itemDownDiv {
+    transition: height 0.5s;
+    height: 20px;
+    margin-left: 5px;
+    padding: 6px 25px;
+    border-left: 1px solid #e2e2e2;
+  }
+  .itemLIst {
+    margin-left: 10px;
+    padding: 12px 20px 0px 5px;
+    border-bottom: 1px solid #e2e2e2;
+    .spanItemListOne {
+      margin-right: 50px;
+    }
+    .icon_Span {
+      cursor: pointer;
+      display: inline-block;
+      width: 100px;
+    }
+    .icon_delete {
+      float: right;
+    }
+  }
+  .itemLIst:first-child {
+    padding: 16px 20px 0px 5px;
+  }
+  .itemLIst:last-child {
+    padding: 12px 20px 0px 5px;
+    margin-bottom: 10px;
+  }
+  .buttonJian {
+    border: 1px dashed #59b4f4;
+    background: #def0fd;
+    border-radius: 2px;
+  }
+}
+#cycleDiv {
+  display: flex;
+  width: 100%;
+  border: 1px solid #bababa;
+  margin-bottom: 15px;
+  .title {
+    font-weight: 500;
+    color: #333333;
+    line-height: 40px;
+    height: 40px;
+  }
+  .titleTwo {
+    color: #333333;
+    line-height: 30px;
+  }
+  .cycleLeft {
+    display: inline-block;
+    vertical-align: top;
+    width: 55%;
+    border-right: 1px solid #bababa;
+    padding: 0 0 15px 12px;
+  }
+  .cycleRight {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    padding: 0 0 15px 14px;
+  }
+}
+.modalp {
+  padding: 20px 30px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 20px auto;
+}
+// 拖拽排序
+.list-wrap {
+  position: relative;
+}
+#list {
+  user-select: none;
+  .itemlist {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 90%;
+    height: 32px;
+    padding: 7px 0px 0px 0px;
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+    .oper-list {
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding-left: 30px;
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        #ffffff 23%
+      );
+      .oper-item {
+        padding: 10px 0 0 0;
+        margin-right: 12px;
+        cursor: pointer;
+        position: relative;
+        &:first-child:after {
+          content: "";
+          height: 80%;
+          position: absolute;
+          top: 50%;
+          left: 24px;
+          transform: translate(0, -50%);
+        }
+        &.icon-move {
+          cursor: move;
+        }
+        list-style-type: none;
+      }
+    }
+    .index {
+      margin-right: 12px;
+    }
+    .info {
+      flex-grow: 1;
+      width: 0;
+      .flexDiv {
+        display: flex;
+        justify-content: space-between;
+      }
+      .title {
+        line-height: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .itemSvg {
+        margin-right: 20px;
+      }
+    }
+    &.active {
+      background: #f8f8f8;
+      .index,
+      .title {
+        color: #23b8ff;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: 0;
+        height: 100%;
+      }
+    }
+  }
+}

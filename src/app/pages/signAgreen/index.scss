@@ -1,0 +1,17 @@
+.rightAgreenCount {
+  margin-bottom: 15px;
+  .rightTitleAgreen {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(246, 246, 246, 0.8);
+    border-radius: 2px;
+    font-size: 16px;
+    color: #333;
+    padding: 7px;
+    margin-bottom: 4px;
+    .rightAgreenTitleFont {
+      margin-left: 10px;
+    }
+  }
+}

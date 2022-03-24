@@ -1,0 +1,50 @@
+.receiveTitleDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  > span:first-child {
+    color: #59b4f4;
+  }
+}
+.spanTitle {
+  margin-right: 10px;
+}
+.colorSpanBottom {
+  cursor: pointer;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 1em;
+  text-align: center;
+  color: #59b4f4;
+}
+.circleMessage {
+  position: absolute;
+  top: -10px;
+  right: 3px;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 16px;
+  text-align: center;
+  font-size: 0.75rem;
+  background: #ff0000;
+  border-radius: 50%;
+}
+.messagesList {
+  overflow: scroll;
+  max-height: 400px;
+  width: 320px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  ::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
+}
+#messageListDiv {
+  .ant-divider-horizontal {
+    margin: 10px 0;
+  }
+}
+.iconMargin {
+  margin: 2px 0 0 10px;
+}

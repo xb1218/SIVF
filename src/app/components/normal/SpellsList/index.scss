@@ -1,0 +1,27 @@
+#SpellCountDiv {
+  width: 100%;
+  padding: 30px;
+  margin: 0 auto;
+  .spellTopDiv {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    .topItemSpell {
+      display: inline-block;
+      padding: 0px 10px;
+      .itemSpell {
+        margin-right: 5px;
+      }
+    }
+  }
+  .borderItem {
+    border-right: 1px solid #000;
+  }
+  .tableSpell {
+    overflow-y: scroll;
+    height: 250px;
+    .modalRgiht::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.abnormal {
+  background-color: #fff;
+  margin-bottom: 10px;
+  min-height: 410px;
+  .ant-table-tbody > tr > td {
+    border-bottom: 0;
+  }
+  .ant-table-tbody > tr:last-child {
+    border-bottom: 1px solid #eee;
+  }
+}

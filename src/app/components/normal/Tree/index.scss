@@ -1,0 +1,206 @@
+.tree {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  background-color: white;
+  border-radius: 2px;
+  min-width: 180px;
+  position: fixed;
+  user-select: none;
+  .listbox {
+    width: 100%;
+    height: calc(100vh - 95px);
+    display: flex;
+    flex-direction: column;
+    .selectClinic {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .ant-select {
+        width: 70%;
+        margin: 0 5%;
+      }
+      .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+        border-radius: 4px;
+        border: 1px solid #bdbdbd;
+      }
+      .outtotalnumber {
+        .icon_add {
+          display: inline-block;
+          width: 1.5em;
+          height: 1.5em;
+          // margin: 0 10px;
+        }
+
+        // width: 20%;
+        // font-size: 16px;
+        // .complete {
+        //   color: lightskyblue;
+        // }
+      }
+    }
+    .treebox {
+      flex: 1;
+      width: 100%;
+      text-align: center;
+      overflow: scroll;
+      ::-webkit-scrollbar {
+        width: 0 !important;
+      }
+      .icon_empty {
+        display: inline-block;
+        width: 5.5em;
+        height: 5.5em;
+      }
+    }
+    .treebox::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .icon_add3 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 40px;
+    bottom: 3px;
+    text-align: center;
+    line-height: 25px;
+  }
+  .icon_add2 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 40px;
+    bottom: 3px;
+    text-align: center;
+    line-height: 25px;
+  }
+  .btnadd {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // height: 50px;
+    // width: 100%;
+    // border-radius: 4px 4px 0px 0px;
+    // .btn {
+    //   width: 90%;
+    // }
+    // .ant-btn-primary {
+    //   background: #59b4f4;
+    //   border-radius: 4px;
+    //   font-size: 16px;
+    //   font-weight: bold;
+    // }
+    // .ant-btn {
+    //   line-height: 16px;
+    // }
+  }
+}
+
+.itembox {
+  width: 160px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .itemtopbox {
+    .icon_girl {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin: 0 10px;
+    }
+    .sameNameline {
+      border-bottom: 1px solid #ff0000;
+    }
+  }
+
+  .symbolem {
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.ant-tooltip-inner {
+  display: flex;
+}
+em {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  padding: 0 5px;
+  background: #dcf0ff;
+  border-radius: 2px;
+  font-weight: 400;
+  color: #59b4f4;
+  margin-right: 6px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.treeItem {
+  display: flex;
+  width: 90%;
+  height: 80px;
+  line-height: 40px;
+  margin: 0 10px 10px 10px;
+  box-shadow: 0px 0px 4px 0px rgba(191, 191, 191, 0.6);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  flex-direction: column;
+  position: relative;
+  border-bottom: 1px solid lightgrey;
+}
+.treeItem-active {
+  background-color: #edf6fd;
+}
+.treeItem-grey {
+  background: #f6f6f6;
+}
+
+//标记
+.stage {
+  color: white;
+  padding: 10px;
+  position: absolute;
+  right: -20px;
+  top: -10px;
+  .icon_girl {
+    display: inline-block;
+    width: 45px;
+    height: 35px;
+  }
+}
+// 广播
+.broadcast {
+  color: white;
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+  bottom: -20px;
+  .icon_girl {
+    display: inline-block;
+    width: 45px;
+    height: 35px;
+  }
+}
+
+.totalBox {
+  width: 160px;
+  margin: 0 5px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    padding: 0 5px;
+    :first-child {
+      padding-right: 5px;
+    }
+  }
+}

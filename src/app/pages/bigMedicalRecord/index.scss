@@ -1,0 +1,58 @@
+.contentBigRecord {
+  margin-top: 55px;
+  padding-left: 20px;
+}
+.contentMedical {
+  display: flex;
+  .leftMedical {
+    display: inline-block;
+    width: 67%;
+    padding-right: 10px;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+  .rightMedical {
+    vertical-align: top;
+    display: inline-block;
+    width: 33%;
+  }
+}
+.flexMedical {
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+  span {
+    display: inline-block;
+    padding: 0 6px;
+  }
+}
+.borderLeftMedical {
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 0px 0px 10px 0;
+  .flagMedical {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    width: 2px;
+    height: 14px;
+    background-color: #59b4f4;
+  }
+  span {
+    display: inline-block;
+    padding-right: 10px;
+    text-decoration: underline;
+  }
+}
+.svgMedical {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+.dashedBorderMedical {
+  margin: 20px 0;
+  border: 1px dashed #b8b8b8;
+}
+.marginLeftMedical {
+  margin-left: 1em;
+  padding-left: 3px;
+}

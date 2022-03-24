@@ -1,0 +1,22 @@
+.setButton {
+  float: right;
+  margin-right: 30px;
+}
+.setButtontoday {
+  float: right;
+  margin-right: 30px;
+  margin-top: -4.5px;
+}
+.div_top_setcon {
+  height: 65%;
+  overflow-y: scroll;
+}
+.div_top_setcon::-webkit-scrollbar {
+  display: none;
+}
+.div_bottom_setcon {
+  height: 13%;
+}
+.drawerWidth {
+  width: 1000px;
+}

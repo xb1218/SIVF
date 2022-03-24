@@ -1,0 +1,76 @@
+.breadContent {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+}
+.detailContent {
+  position: relative;
+  top: 40px;
+  display: flex;
+
+  .contained {
+    position: relative;
+    width: calc(100% - 200px);
+    left: 190px;
+  }
+  // 不包含患者列表
+  .patientContent {
+    width: calc(100vw);
+    height: calc(100% - 50px);
+  }
+  //手术按钮切换样式
+  .surgeryUnchecked {
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 24px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #bebebe;
+    cursor: pointer;
+  }
+  .surgeryChecked {
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 26px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #59b4f4;
+    color: #fff;
+  }
+  .subtitle {
+    text-align: left;
+    margin: 0 0 0 22px;
+    color: #59b4f4;
+    height: 30px;
+    line-height: 30px;
+  }
+  .operatediv {
+    text-align: left;
+    padding: 20px 0 20px 10px;
+  }
+  .buttonSelect {
+    padding: 4px 13px;
+    border-radius: 8px;
+    border: 1px solid #59b4f4;
+    cursor: pointer;
+    background-color: "#fff";
+    color: "#59B4F4";
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .colorBlue {
+    color: #fff;
+    background-color: #59b4f4;
+  }
+  .spanTitle {
+    margin-left: 10px;
+    color: black;
+  }
+}
+.bigMedicalDiv {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}

@@ -1,0 +1,12 @@
+.review {
+  display: flex;
+  .curlist {
+    flex: 1;
+  }
+  .threelist {
+    flex: 3;
+    .comtop {
+      display: flex;
+    }
+  }
+}

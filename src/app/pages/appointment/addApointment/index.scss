@@ -1,0 +1,57 @@
+.addApointment {
+  display: flex;
+  .addLeft {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #d8d8d8;
+    padding: 12px 10px 0 0;
+    .selectRow {
+      background: red;
+    }
+    .btnDefaultAdd {
+      align-self: flex-end;
+      margin: 20px 0;
+    }
+    .ant-empty {
+      margin-top: 80px;
+    }
+  }
+  .addRight {
+    .rightTitle {
+      height: 60px;
+      line-height: 60px;
+    }
+    .reservationTable {
+      margin-left: 10px;
+      width: 770px;
+      height: 200px;
+      overflow-y: scroll;
+    }
+    .reservationTable::-webkit-scrollbar {
+      display: none;
+    }
+    .btns {
+      margin: 20px 0;
+      .cancel-btn {
+        text-align: center;
+        width: 80px;
+        color: #59b4f4;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 3px;
+        border: 1px solid #59b4f4;
+        cursor: pointer;
+      }
+      .confirm-btn {
+        text-align: center;
+        width: 80px;
+        height: 32px;
+        line-height: 32px;
+        cursor: pointer;
+        background: #59b4f4;
+        color: white;
+        border-radius: 3px;
+      }
+    }
+  }
+}

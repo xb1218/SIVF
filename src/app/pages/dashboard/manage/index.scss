@@ -1,0 +1,10 @@
+.manage {
+  overflow-y: auto;
+  .position_datePicker {
+    margin-left: calc(66vw - 480px);
+  }
+  .typeRadio {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+}

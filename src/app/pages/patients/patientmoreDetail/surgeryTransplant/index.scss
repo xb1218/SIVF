@@ -1,0 +1,45 @@
+.surgeryTransplant {
+  overflow-x: hidden;
+  .divider {
+    margin: 0 15px;
+    .ant-divider-horizontal {
+      border-width: 10px;
+      margin: 10px 0;
+    }
+  }
+  .flexItem {
+    line-height: 36px;
+    > div {
+      margin-left: none !important;
+    }
+  }
+  .paneldiv {
+    height: 38px;
+    margin: 0 5px 0 15px;
+    line-height: 36px;
+    vertical-align: middle;
+  }
+  .occupy {
+    margin-left: 55px;
+  }
+  .flexgrow {
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+  .medication {
+    margin-left: 30px;
+  }
+  .dashbutton {
+    height: 32px;
+    line-height: 32px;
+  }
+  .icon_record {
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    color: rgb(255, 162, 92);
+  }
+}
+.divmargin {
+  margin-bottom: 5px;
+}

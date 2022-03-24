@@ -1,0 +1,85 @@
+.sitewrapper {
+  position: relative;
+  background: #fafafa;
+  transition: all 0.7s;
+}
+
+.showed {
+  position: relative;
+  background: #fafafa;
+  transition: all 0.7s;
+}
+
+.inline-entry {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.drawer {
+  background: lightgray;
+  height: 120px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.noshow {
+  display: none;
+}
+
+#follmonDiv {
+  outline: none !important;
+}
+#monitor_medical {
+  margin: 0 20px;
+  text-align: left;
+  .selectDic {
+    vertical-align: top;
+    display: inline-block;
+    width: 130px;
+  }
+
+  .buttonDiv {
+    vertical-align: top !important;
+  }
+  .ant-select {
+    .ant-select-selector {
+      .ant-select-selection-item {
+        display: none;
+      }
+    }
+  }
+}
+.colorred {
+  color: red;
+}
+.titleItem {
+  color: #59b4f4;
+}
+.spanItem {
+  line-height: 35px;
+  span {
+    margin: 0 0.5em;
+  }
+}
+.revisionFlex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.revisionMargin {
+  margin: 0 20px 0 0;
+}
+.revisionCursor {
+  cursor: pointer;
+}
+.editPlan {
+  background: #f6f6f6 !important;
+}
+.editPlanDIV {
+  margin-top: 10px;
+  padding: 10px 0;
+}
+.visitButton {
+  padding: 20px 20px;
+}

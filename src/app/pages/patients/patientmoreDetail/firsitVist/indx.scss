@@ -1,0 +1,39 @@
+.first_content {
+  display: flex;
+  min-height: calc(70vh);
+  overflow-y: scroll;
+
+  .border_left {
+    display: inline-block;
+    height: 15px;
+    padding-right: 10px;
+    margin-top: 7.5px;
+    border-left: 2px solid #59b4f4;
+  }
+  .color_blue {
+    color: #59b4f4;
+  }
+  .printCard {
+    background-color: #fff;
+    border-radius: 2px;
+    flex: 4.5;
+    max-width: 500px;
+    margin-right: 10px;
+    padding: 10px;
+  }
+  .editCard {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 2px;
+    flex: 5.5;
+    > div {
+      margin-bottom: 1em;
+    }
+  }
+}
+.first_content ::-webkit-scrollbar {
+  display: none;
+}
+.menButton {
+  margin-top: 5px;
+}

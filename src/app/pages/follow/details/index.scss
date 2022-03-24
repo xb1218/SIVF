@@ -1,0 +1,63 @@
+.followDetails {
+  width: calc(100vw - 220px);
+  .entry {
+    padding: 25px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px #e5e7e9;
+    display: flex;
+    flex-wrap: wrap;
+    .select {
+      margin-right: 15px;
+      width: 130px;
+    }
+    .display_flex {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: flex-start;
+    }
+    .display_flex_end {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+  .subTitle {
+    font-size: 16px;
+    color: #02a7f0;
+    padding-left: 15px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: transparent;
+  }
+}
+.linetop {
+  margin-top: 10px;
+  width: 100%;
+  border-top: 1px dashed #bebebe;
+  padding-top: 20px;
+}
+// 出生后详情样式
+.contentDiv {
+  position: relative;
+  height: 450px;
+}
+.SrcollerDiv {
+  height: 400px;
+  overflow-y: scroll;
+}
+.SrcollerDiv::-webkit-scrollbar {
+  display: none;
+}
+.fixDiv {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+.paddingRight15 {
+  padding-right: 15px;
+}

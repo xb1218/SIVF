@@ -1,0 +1,120 @@
+.hcg {
+  display: flex;
+  flex-direction: column;
+}
+
+.extra {
+  float: left;
+}
+.leftTitles {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 0px 10px 0;
+  .flag {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    width: 2px;
+    height: 14px;
+    background-color: #59b4f4;
+  }
+}
+.leftTime {
+  display: inline-block;
+}
+.rightprint {
+  float: right;
+  margin: 0 10px 5px 0px;
+}
+// 控制列是否显示
+.notshow {
+  display: none;
+}
+// 多组显示
+#groupDiv {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  .flexgroup {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 15px;
+    .fixGroup {
+      position: absolute;
+      top: 0px;
+    }
+  }
+}
+.colorRed {
+  color: #ffa25c;
+}
+// opu取卵详情画面
+#detailDivOpu {
+  .detailItemTitle {
+    padding: 0 24px;
+    line-height: 24px;
+    height: 24px;
+    background: #e4e5e6;
+  }
+  .detailItemOpu {
+    margin: 0 24px;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px solid #e2e2e2;
+    color: #666;
+    .paddingspan {
+      padding-right: 8px;
+    }
+  }
+}
+#allDataDiv {
+  .ant-collapse-content > .ant-collapse-content-box {
+    padding: 0;
+  }
+  .ant-collapse-content {
+    border-top: none;
+  }
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    background: #fff;
+    color: #59b4f4;
+  }
+  .ant-collapse > .ant-collapse-item {
+    border-bottom: none;
+  }
+  .ant-collapse:last-child {
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header,
+  .ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-arrow {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+.buttonStyleSave {
+  background: #ffa25c;
+  color: #fff;
+  border: 1px solid#FFA25C;
+  border-radius: 2px;
+}
+.row-dragging {
+  background: #fafafa;
+  border: 1px solid #ccc;
+}
+
+.row-dragging td {
+  padding: 16px;
+}
+
+.row-dragging .drag-visible {
+  visibility: visible;
+}
+
+.scheduleDiv {
+  height: calc(100vh - 100px);
+  margin-bottom: 0;
+}

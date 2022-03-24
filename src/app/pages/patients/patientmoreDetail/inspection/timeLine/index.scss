@@ -1,0 +1,20 @@
+.timeLine {
+  background-color: #fff;
+  min-height: 410px;
+  .ant-timeline {
+    padding-top: 20px;
+  }
+  .ant-timeline-item {
+    padding-bottom: 0;
+  }
+  .ant-timeline-item-content {
+    top: -5px;
+    text-align: left;
+  }
+  .ellipsis {
+    margin-right: 20px;
+  }
+  .itemName {
+    font-weight: bold;
+  }
+}

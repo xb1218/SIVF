@@ -1,0 +1,32 @@
+.chartBody {
+  height: 500px;
+  border-radius: 2px;
+  margin: 0;
+  padding: 0;
+  .title {
+    width: 192px;
+    height: 22px;
+    font-size: 16px;
+    font-family: PingFang-SC-Bold, PingFang-SC;
+    font-weight: bold;
+    color: #333333;
+    line-height: 22px;
+    margin-top: 10px;
+    display: inline-block;
+  }
+}
+.close {
+  font-weight: 800;
+  font-size: 20px;
+  float: right;
+  margin: 13px 10px 0 0;
+}
+
+.chart {
+  margin-top: 27px;
+  height: calc(100% - 50px);
+}
+.patientName {
+  border-bottom: #59b4f4 5px solid;
+  box-sizing: content-box;
+}

@@ -1,0 +1,41 @@
+#workbench {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  background-color: white;
+  border-radius: 2px;
+  margin: 0 10px 10px 0;
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    height: 40px;
+    line-height: 40px;
+    .leftTitle {
+      display: flex;
+      align-items: center;
+      height: 35px;
+      .flag {
+        vertical-align: middle;
+        display: inline-block;
+        margin: 0 5px;
+        width: 2px;
+        height: 14px;
+        background-color: rgba(89, 180, 244, 1);
+      }
+      .name {
+        font-weight: bold;
+        width: 80px;
+      }
+    }
+    .rightTitle {
+      margin-right: 5px;
+    }
+  }
+
+  .title_content {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,43 @@
+#viewDiv {
+  padding: 20px;
+}
+.colorRed {
+  color: red;
+}
+.recordCycle {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 3px;
+}
+#flexDivItem {
+  margin: 15px 0;
+  > div {
+    margin-left: 15px;
+  }
+}
+#endDiv {
+  padding: 10px;
+  text-align: right;
+}
+
+.naturalHead {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  > div {
+    flex: 1;
+    text-align: center;
+    padding: 0 2px;
+    border-right: 1px solid #f0f0f0;
+  }
+  > div:last-child {
+    border-right: none;
+  }
+}
+.borderNatural {
+  border-bottom: 1px solid #f0f0f0;
+}
+.ant-table-thead > tr > th {
+  height: 20px !important;
+  line-height: 20px !important;
+}

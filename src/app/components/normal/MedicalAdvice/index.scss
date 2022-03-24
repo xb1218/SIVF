@@ -1,0 +1,510 @@
+#countDiv {
+  text-align: left;
+  div {
+    display: inline-block;
+    margin-right: 40px;
+  }
+  .buttonDiv {
+    margin-right: 0;
+    float: right;
+    margin-bottom: 10px;
+  }
+}
+#rightDiv {
+  text-align: right;
+  margin: 20px 40px 0 0;
+  span {
+    margin-left: 40px;
+  }
+}
+.icon_svg {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -4px;
+  fill: currentColor;
+  overflow: hidden;
+}
+.titleP {
+  margin: 17px auto;
+  text-align: center;
+  font-weight: 500;
+  color: #333333;
+}
+.titleMedical {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin: 0 18px 15px 18px;
+}
+.underLineSpan {
+  width: 79px;
+  border-bottom: 1px solid #999;
+  display: inline-block;
+}
+.modalFont {
+  color: #fff;
+}
+.floatDiv {
+  text-align: right;
+  margin: 10px 18px;
+}
+// 治疗单、处方
+#showMediaArry {
+  border: 1px solid #bababa;
+  margin-bottom: 20px;
+  .showP {
+    text-align: left;
+    background-color: #f6f6f6;
+    padding: 5px 20px;
+  }
+  .medicalDiv {
+    margin: 15px 18px;
+    background: rgba(224, 224, 224, 0.42);
+  }
+  .drugFlex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    > div {
+      margin: 0 10px;
+    }
+  }
+  .showFlex {
+    margin: 5px 20px;
+    text-align: left;
+    height: 32px;
+    line-height: 32px;
+  }
+  .spotDiv {
+    color: #000;
+    font-size: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+#itemsP {
+  margin-left: 20px;
+  padding-left: 15px;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 4px 6px;
+  .spanOne {
+    width: 30%;
+    display: inline-block;
+  }
+  .spanRed {
+    color: #ff0000;
+    border-bottom: 1px solid #ff0000;
+  }
+  .spanGreen {
+    color: #52c41a;
+    border-bottom: 1px solid #52c41a;
+  }
+  .spanRight {
+    float: right;
+    margin-right: 20px;
+  }
+}
+.colorBlue {
+  color: #fff;
+  background-color: #59b4f4;
+}
+.colorZi {
+  color: #59b4f4;
+}
+.titleCountBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.buttonsRight {
+  display: inline-block;
+  text-align: right;
+}
+.selectDic {
+  vertical-align: top;
+  display: inline-block;
+  width: 130px;
+}
+.buttonDiv {
+  vertical-align: top !important;
+}
+.flexDiv {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 15px;
+}
+.switchButton {
+  margin: 15px 10px;
+  min-width: 65px;
+  .ant-switch-inner {
+    margin: 0 !important;
+  }
+}
+.buttonCheck {
+  color: #fff !important;
+  background: #59b4f4 !important;
+  border: 1px solid #59b4f4;
+}
+#ant .ant-switch-inner {
+  margin: -9px 14px 0 13px !important;
+}
+#pointerSpan {
+  cursor: pointer;
+}
+.marginCountDiv {
+  margin-bottom: 20px;
+}
+.divBottom {
+  border-bottom: 1px dashed #888888;
+  margin-bottom: 15px;
+}
+.marginFive {
+  margin: 5px;
+}
+// 处方
+#listDia {
+  margin-top: 20px;
+  .listHeader {
+    height: 18px;
+    .spanList {
+      padding-right: 30px;
+    }
+    .spanDown {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .circleSpanDia {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #59b4f4;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+  }
+  .itemDiv {
+    margin-left: 5px;
+    padding: 6px 25px;
+    transition: height 0.5s;
+    border-left: 1px solid #e2e2e2;
+  }
+  .itemDownDiv {
+    transition: height 0.5s;
+    height: 20px;
+    margin-left: 5px;
+    padding: 6px 25px;
+    border-left: 1px solid #e2e2e2;
+  }
+  .itemLIst {
+    margin-left: 10px;
+    padding: 8px 20px 8px 5px;
+    border-bottom: 1px solid #e2e2e2;
+    .spanItemListOne {
+      margin-right: 50px;
+    }
+    .icon_Span {
+      cursor: pointer;
+      display: inline-block;
+      width: 100px;
+    }
+    .icon_delete {
+      float: right;
+    }
+    .icon_svg {
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: -4px;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  }
+  .itemLIst:first-child {
+    padding: 16px 20px 8px 5px;
+  }
+  .itemLIst:last-child {
+    padding: 8px 20px 8px 5px;
+    margin-bottom: 10px;
+  }
+  .buttonJian {
+    border: 1px dashed #59b4f4;
+    background: #def0fd;
+    border-radius: 2px;
+  }
+}
+// 扳机
+#triggerDiv {
+  .triggerLeft {
+    width: 10%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 4px;
+    .leftTitle {
+      color: #59b4f4;
+    }
+    .repairCircle {
+      float: right;
+      margin-right: 20px;
+      text-align: center;
+      width: 26px;
+      height: 26px;
+      border: 1px solid #59b4f4;
+      border-radius: 50%;
+      color: #59b4f4;
+    }
+  }
+  .triggerRight {
+    width: 90%;
+    display: inline-block;
+    .divFlex {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 15px;
+      div {
+        margin-right: 0;
+      }
+    }
+    .divItem {
+      width: 45%;
+      height: 32px;
+      line-height: 32px;
+    }
+    .marginDiv {
+      margin-right: 5px;
+    }
+    .underSpan {
+      padding: 0 2px;
+      text-decoration: underline;
+    }
+    .spanUnder {
+      display: inline-block;
+      width: 60%;
+      border-bottom: 1px solid #bdbdbd;
+    }
+  }
+}
+// 套餐
+#setModalDiv {
+  .modalLeft {
+    display: inline-block;
+    overflow-y: scroll;
+    width: 20%;
+    height: 350px;
+    border-right: 1px solid #e2e2e2;
+    .modalDiv {
+      text-align: left;
+    }
+    .drugDiv {
+      padding: 7px 0 7px 20px;
+      border-bottom: 1px solid #a2a2a2;
+      color: #59b4f4;
+    }
+    .ant-radio-group {
+      display: block;
+    }
+    .ant-radio-wrapper {
+      margin-right: 0;
+    }
+    .itemTerm {
+      display: block;
+      padding: 7px 0 7px 20px;
+      border-bottom: 1px solid #e2e2e2;
+      cursor: pointer;
+    }
+    .itemTerm:hover {
+      background: #edf6fd;
+    }
+  }
+  .modalLeft::-webkit-scrollbar {
+    display: none;
+  }
+  .modalRgiht {
+    .modalRightTitle {
+      display: flex;
+      justify-content: space-around;
+      > div {
+        cursor: pointer;
+        margin: 10px 0px;
+      }
+      .cursorPoint {
+        color: #59b4f4;
+      }
+    }
+    display: inline-block;
+    overflow-y: scroll;
+    height: 350px;
+    width: 80%;
+    .ant-table-wrapper {
+      margin-top: 0;
+    }
+  }
+  .modalRgiht::-webkit-scrollbar {
+    display: none;
+  }
+}
+.bolckSpan {
+  display: none;
+}
+.modalDivFrame {
+  padding: 20px 30px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 20px auto;
+  .modalSpan {
+    color: red;
+  }
+}
+// 治疗单打印
+#treatMent {
+  border: 1px solid #e2e2e2;
+  border-bottom: none;
+  .treatMentDiv {
+    border-bottom: 1px solid #e2e2e2;
+    .treatMentItem {
+      margin: 5px 20px;
+      text-align: left;
+      div {
+        width: 16.5%;
+        display: inline-block;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+.spanUnderLine {
+  display: inline-block;
+  width: 30%;
+  margin-right: 15px;
+  border-bottom: 1px solid #bdbdbd;
+}
+.yuecircle {
+  float: right;
+  text-align: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #59b4f4;
+  border-radius: 50%;
+  color: #59b4f4;
+}
+.marginSpan {
+  display: inline-block;
+  margin-left: 15px;
+}
+.quickSvg {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+  margin-top: 4px;
+  cursor: pointer;
+}
+// 快速导入
+#quickCount {
+  margin-top: 15px;
+  .ant-radio-button-wrapper {
+    margin: 0 10px;
+  }
+}
+#quickListDiv {
+  margin: 15px 0 0 10px;
+  width: 100%;
+  height: calc(100vh - 130px);
+  overflow-y: scroll;
+  #quickListDiv::-webkit-scrollbar {
+    display: none;
+  }
+  .quickItemTitle {
+    display: flex;
+    width: 100%;
+    .quickcycleFather {
+      margin-top: 3px;
+      display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid #56afff;
+      position: relative;
+      margin-right: 15px;
+      .quickCycle {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #56afff;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+      }
+    }
+    .quickDia {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .titleUnderLine {
+      flex: 1;
+      margin-top: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%;
+      border-top: 1px dashed #b8b8b8;
+    }
+    .titleIcon {
+      margin: 0px 12px 0px 12px;
+      float: right;
+    }
+    .iconColor {
+      font-size: 18px;
+      color: #56afff;
+      cursor: pointer;
+    }
+  }
+  .quickItem {
+    margin-left: 7px;
+    padding: 10px 10px 5px 23px;
+    border-left: 1px dashed #cecece;
+    .itemSpan {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+  }
+}
+.dividerTop {
+  margin-top: 5px;
+}
+.setMealIcon {
+  margin-left: 10px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+.addMeal {
+  padding: 15px 20px;
+  .addMealTitle {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .titleDiv {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-right: 30px;
+      .paddingSpan {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.regimenDiv {
+  margin-bottom: 10px;
+  .regimenItem > div {
+    margin-bottom: 5px;
+  }
+}

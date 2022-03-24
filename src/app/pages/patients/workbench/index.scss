@@ -1,0 +1,86 @@
+.work_bench {
+  .root {
+    display: flex;
+    height: -webkit-fill-available;
+    margin-bottom: 10px;
+    .statistic {
+      min-width: 300px;
+      height: calc(100vh - 20px);
+      .viewShowTitle {
+        margin-bottom: 0;
+      }
+      .viewShowTitleButton {
+        margin-right: 5px;
+      }
+      .dataViewDemoBar {
+        height: calc(100vh -234px) !important;
+      }
+    }
+    .userlist {
+      width: 100%;
+      flex-grow: 1;
+      .ant-input-affix-wrapper {
+        width: 50%;
+      }
+    }
+    .show {
+      color: #59b4f4;
+      cursor: pointer;
+    }
+    .hide {
+      color: black;
+      cursor: pointer;
+    }
+    .pieSecondType {
+      height: 40px;
+      line-height: 40px;
+      .checked {
+        color: lightblue;
+      }
+      > span {
+        padding: 0 5px;
+      }
+      > span:hover {
+        padding: 0 5px;
+        color: lightblue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+#cyclePost {
+  .postTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    .titleLeft {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 40%;
+      border-right: 1px solid #999;
+      padding: 0 10px;
+    }
+    .titleRight {
+      padding: 0 10px;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .paddingSpan {
+        padding: 0 5px;
+      }
+      .titleSelect {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+.tableGroup {
+  height: calc(100vh - 18px);
+}

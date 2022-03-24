@@ -1,0 +1,97 @@
+#adminSet {
+  padding: 10px;
+  padding-bottom: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  .leftset {
+    height: 100vh;
+    display: flex;
+    padding: 0 !important;
+    flex-direction: column;
+    width: 230px;
+    margin-right: 10px;
+    margin-bottom: 0 !important;
+  }
+  .rightShow {
+    height: 100vh;
+    overflow-y: scroll;
+    flex: 1;
+  }
+  .setMeal {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    .blueCol {
+      cursor: pointer;
+      color: #59b4f4;
+      padding: 0 5px;
+    }
+    .advicepad {
+      cursor: pointer;
+      padding: 0 5px;
+    }
+    .iconset {
+      color: #59b4f4;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  }
+  .searchSet {
+    padding: 10px 10px 20px 10px;
+    .inputSet {
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+  .showList {
+    flex: 1;
+    overflow-y: scroll;
+    .listCount {
+      .listItem {
+        cursor: pointer;
+        > span {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 38px;
+          line-height: 38px;
+        }
+      }
+    }
+  }
+  .cursorIcon {
+    cursor: pointer;
+  }
+  #rightMealTitle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    .mealTitle {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .inputMeal {
+      border-bottom: 1px solid #888;
+    }
+    .mealTitleSpan {
+      cursor: pointer;
+      padding: 0 10px;
+    }
+    .mealTitleSpanCheck {
+      color: #59b4f4;
+    }
+  }
+  .bottomTable {
+    margin: 20px 10px;
+    float: right;
+  }
+  .disNow {
+    display: none;
+  }
+}

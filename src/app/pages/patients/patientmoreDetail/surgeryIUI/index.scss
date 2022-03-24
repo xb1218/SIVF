@@ -1,0 +1,95 @@
+.surgeryIUI {
+  overflow-x: hidden;
+  .flexItem {
+    line-height: 36px;
+  }
+  .paneldiv {
+    margin-left: 15px;
+    line-height: 36px;
+  }
+  .occupy {
+    margin-left: 55px;
+  }
+  .flexgrow {
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+  .medication {
+    margin-left: 30px;
+  }
+  .dashbutton {
+    height: 32px;
+    line-height: 32px;
+  }
+  .icon_record {
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    color: rgb(255, 162, 92);
+  }
+}
+.divmargin {
+  margin-bottom: 5px;
+}
+.divider {
+  margin: 0 15px;
+  .ant-divider-horizontal {
+    border-width: 10px;
+    margin: 10px 0;
+  }
+}
+//手术模板
+.templateDiv {
+  margin-top: 30px;
+}
+.templateItem {
+  width: 100%;
+  box-sizing: border-box;
+  vertical-align: top;
+  > div {
+    padding: 0 10px;
+  }
+  .templateItemLeft {
+    vertical-align: top;
+    width: 22%;
+    display: inline-block;
+  }
+  .templateItemRight {
+    vertical-align: top;
+    width: 6%;
+    display: inline-block;
+  }
+  .noteItemDiv {
+    vertical-align: top;
+    width: 72%;
+    display: inline-block;
+    border: 1px solid #bdbdbd;
+  }
+  .editIcon {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #ffa25c;
+    cursor: pointer;
+  }
+  .gouDiv {
+    font-size: 22px;
+    color: #59b4f4;
+    cursor: pointer;
+  }
+}
+.editTemplate {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 0 10px 0;
+  span {
+    margin-right: 10px;
+    line-height: 32px;
+  }
+  span:nth-child(2) {
+    flex: 1;
+  }
+}
+.marginTopDiv {
+  margin: 20px 10px;
+}

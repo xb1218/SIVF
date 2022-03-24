@@ -1,0 +1,13 @@
+.disable {
+  pointer-events: none;
+  color: #ccc !important;
+}
+#appointmentCount {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  .appointmentDiv {
+    flex: 1;
+  }
+}

@@ -1,0 +1,56 @@
+.clinicRecordilc {
+  .icon_record {
+    width: 2.2em;
+    height: 2.2em;
+  }
+
+  .process {
+    display: flex;
+    .proTitle {
+      min-width: 40px;
+    }
+    .showFlex {
+      div {
+        min-width: 80px;
+        margin-right: 15px;
+        display: inline-block;
+      }
+    }
+  }
+}
+.myIframe {
+  height: 100vh;
+  .backIcon {
+    height: 36px;
+    line-height: 30px;
+  }
+}
+// 自然周期布局
+.naturalLeftDiv {
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  margin-left: 40px;
+  line-height: 32px;
+}
+.naturalRightDiv {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 32px;
+}
+.naturalRightItem {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 10px;
+  line-height: 32px;
+}
+.titleFlexDiv {
+  margin-right: 15px;
+}
+.titleFlexSpan {
+  margin-right: 8px;
+}
+.printDrawer {
+  height: 97vh;
+  overflow-y: scroll;
+}

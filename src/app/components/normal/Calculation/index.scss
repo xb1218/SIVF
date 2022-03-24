@@ -1,0 +1,32 @@
+.blueColor {
+  color: #59b4f4;
+}
+.divFlex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  div {
+    margin-right: 10px;
+  }
+  .spanMargin {
+    margin-right: 5px;
+  }
+}
+#divPaddingUnit {
+  margin: 0 10px 10px 10px;
+  width: 500px;
+  .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-card.ant-tabs-top > div > .ant-tabs-nav .ant-tabs-tab {
+    width: 80px;
+    text-align: center;
+  }
+}
+.fontInputWidth {
+  display: inline-block;
+  width: 110px;
+}
+.iconUnit {
+  color: #59b4f4;
+  font-size: 16px;
+  padding: 0 15px;
+}

@@ -1,0 +1,33 @@
+.basetable {
+  margin: 8px 10px 0 10px;
+  .ant-table-tbody > tr > td {
+    border-bottom: 0;
+  }
+  .ant-table-tbody > tr:last-child {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.degreeType {
+  margin-left: 10px;
+}
+.version {
+  display: inline-block;
+  margin-top: 8px;
+  z-index: 999;
+}
+
+.contentListStyle {
+  height: 25px;
+  cursor:pointer;
+  text-align: center;
+}
+.contentListStyle:hover{
+  color: #59b4f4;
+}
+
+.typeListDiv {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+}

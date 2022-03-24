@@ -1,0 +1,79 @@
+.header {
+  height: 55px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: linear-gradient(
+    to right,
+    rgba(130, 211, 249, 1) 0%,
+    rgba(134, 160, 255, 1) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+
+  .page-header-logo {
+    display: inline-block;
+    height: 50px;
+    width: 56px;
+    margin-left: 20px;
+    background-image: url("../../../styles/image/slogo.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .head-item {
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      padding-left: 8px;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+
+    input {
+      border: 1px solid #fff;
+      border-radius: 15px;
+      background-color: #ffffff7a;
+    }
+  }
+
+  .icon_serch {
+    width: 1.3em;
+    height: 1.3em;
+  }
+
+  .icon_head {
+    width: 2em;
+    height: 2em;
+  }
+
+  .ant-select {
+    color: #59b4f4;
+  }
+
+  .ant-select-arrow {
+    color: #59b4f4;
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 40px;
+  }
+
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+#messages {
+  position: relative;
+}

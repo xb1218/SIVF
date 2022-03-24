@@ -1,0 +1,15 @@
+.inspection {
+  .icon_record {
+    width: 1.5em;
+    height: 1.3em;
+    color: rgb(255, 162, 92);
+  }
+  .flexgrow {
+    flex-grow: 1;
+    margin-right: 20px;
+    span:nth-child(2) {
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+}

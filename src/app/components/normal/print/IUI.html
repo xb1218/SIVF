@@ -1,0 +1,1374 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+  <title>IUI</title>
+  <style type="text/css">
+    body {
+      font-family: "宋体";
+    }
+
+    #viewContent {}
+
+    #operationDiv {
+      float: left;
+      background-color: #F4F4F4;
+      width: 20%;
+      max-width: 300px;
+      position: fixed;
+      /* 绝对定位 */
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      padding: 15px 10px 15px 10px;
+      /* 上 右 下 左*/
+      overflow: auto;
+    }
+
+    .A4page {
+      background-color: white;
+      width: 21cm;
+      height: 1197px;
+      margin: 0 auto
+    }
+
+    .B5page {
+      background-color: white;
+      width: 17.6cm;
+      height: 25cm;
+      margin: 0 auto
+    }
+
+
+    .A4Portrait {
+      background-color: white;
+      width: 21cm;
+      height: 1230px;
+      margin: 0 auto
+    }
+
+    .A4Landscape {
+      background-color: white;
+      width: 29.7cm;
+      height: 21cm;
+      margin: 0 auto
+    }
+
+    .B5Portrait {
+      background-color: white;
+      width: 17.6cm;
+      height: 25cm;
+      margin: 0 auto
+    }
+
+    .B5Landscape {
+      background-color: white;
+      width: 25cm;
+      height: 17.6cm;
+      margin: 0 auto
+    }
+
+    /* 控制循环不跳出 */
+
+    /*分页*/
+    .PageNext {
+      margin: 0 auto;
+      width: 200px;
+      height: 30px;
+      page-break-after: always;
+      background-color: white;
+    }
+
+    .table,
+    .table * {
+      margin: 0 auto;
+      padding: 0;
+      font-size: 14px;
+      font-family: Arial, 宋体, Helvetica, sans-serif;
+    }
+
+    .table {
+      display: table;
+      width: 80%;
+      border-collapse: collapse;
+    }
+
+    .table-tr {
+      display: table-row;
+      height: 30px;
+    }
+
+    .table-th {
+      display: table-cell;
+      font-weight: bold;
+      height: 100%;
+      border: 1px solid gray;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .table-td {
+      display: table-cell;
+      height: 100%;
+      border: 1px solid gray;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .HeaderStyle1 {
+      /* background-color: yellow; */
+      /*border-bottom: solid 1px;*/
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      width: 100%;
+      height: 30px;
+    }
+
+    .HeaderLeftStyle1 {
+      /* 页眉-左 */
+      /* border-right: dashed 1px; */
+      width: 23%;
+      height: 100%;
+      float: left;
+    }
+
+    .HeaderCenterStyle1 {
+      /* 页眉-中 */
+      width: 50%;
+      height: 100%;
+      float: left;
+      text-align: center;
+    }
+
+    .HeaderRightStyle1 {
+      /* 页眉-右 */
+      /* border-left: dashed 1px; */
+      /* width: 23%; */
+      height: 100%;
+      float: left;
+    }
+
+    .FooterStyle1 {
+      /* border-top: solid 1px; */
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      width: 100%;
+      height: 0px;
+    }
+
+    .FooterLeftStyle1 {
+      /* 页脚-左 */
+      /* border-right: dashed 1px; */
+      width: 23%;
+      height: 100%;
+      float: left;
+    }
+
+    .FooterCenterStyle1 {
+      /* 页脚-中 */
+      width: 50%;
+      height: 100%;
+      float: left;
+      text-align: center;
+    }
+
+    .FooterRightStyle1 {
+      /* 页脚-右 */
+      /* border-left: dashed 1px; */
+      width: 23%;
+      height: 100%;
+      float: left;
+    }
+
+    /* 页眉页脚样式2 */
+    .HeaderStyle2 {
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      width: 100%;
+      height: 5%;
+    }
+
+    .HeaderLeftStyle2 {
+      /* 页眉-左 */
+      width: 23%;
+      height: 100%;
+      float: left;
+    }
+
+    .HeaderCenterStyle2 {
+      /* 页眉-中 */
+      width: 50%;
+      height: 100%;
+      float: left;
+      text-align: center;
+    }
+
+    .HeaderRightStyle2 {
+      /* 页眉-右 */
+      width: 23%;
+      height: 100%;
+      float: left;
+    }
+
+    .FooterStyle2 {
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      width: 100%;
+      height: 5%;
+    }
+
+    .FooterLeftStyle2 {
+      /* 页脚-左 */
+      width: 23%;
+      height: 100%;
+      float: left;
+    }
+
+    .FooterCenterStyle2 {
+      /* 页脚-中 */
+      width: 50%;
+      height: 100%;
+      float: left;
+      text-align: center;
+    }
+
+    .FooterRightStyle2 {
+      /* 页脚-右 */
+      width: 23%;
+      height: 100%;
+      float: left;
+    }
+
+    .selectedDiv {
+      border: 1px solid red;
+    }
+
+    .fontSizeSetting {
+      font-size: 16px;
+    }
+
+    .letterSpacing {
+      letter-spacing: 10px;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    /*整体居中，宽794*/
+    .page {
+      margin: 0 auto;
+      text-align: center;
+      width: 794px;
+    }
+
+    /*正文内容：16px，文字居左*/
+    body,
+    div,
+    td,
+    th {
+      text-align: left;
+    }
+
+    /*头部单位名称及线式样*/
+    .header_line {
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      BORDER-BOTTOM: #000000 1px solid;
+    }
+
+    /*段落div，行间距40px，同意书专用*/
+    .paragraph {
+      width: 100%;
+    }
+
+    /*一行div，行高25px*/
+    .line25 {
+      width: 100%;
+      height: 25px;
+      line-height: 25px;
+    }
+
+    .line_font {
+      width: 100%;
+      min-height: 30px;
+      line-height: 30px;
+    }
+
+    /*一行div，行高30px，多行时一行18px*/
+    .line_font_height {
+      width: 100%;
+
+    }
+
+    /*一行div，行高30px*/
+    .line {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    /*一行div，行高35px*/
+    .line35 {
+      width: 100%;
+      height: 35px;
+      line-height: 35px;
+    }
+
+    /*一行div，行高50px，病历首页签名图片行*/
+    .line50 {
+      width: 100%;
+      height: 50px;
+      line-height: 30px;
+    }
+
+    /*一行div，行高40px，同意书专用*/
+    .line40 {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .lineICF {
+      width: 100%;
+      line-height: 40px;
+    }
+
+    /*可能多行div*/
+    .two_line {
+      width: 100%;
+      line-height: 20px;
+    }
+
+    /*单元格内换行*/
+    .cell_wrap {
+      white-space: normal !important;
+      overflow-wrap: break-word;
+    }
+
+    /*一行div内的span*/
+    .inline_span {
+      display: inline-block;
+    }
+
+    /*标题式样：居中加粗24px*/
+    .first_title_line {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /*标题-小标题式样字体居右（日期、病历号）*/
+    .right_textAlign {
+      text-align: right;
+    }
+
+    /*标题-小标题式样字体居中（日期、病历号）*/
+    .center_textAlign {
+      text-align: center;
+    }
+
+    /*小标题式样、横放、加粗（主诉、现病史）*/
+    .second_title_blod {
+      font-weight: bold;
+    }
+
+    /*内容div外距底部10px*/
+    .content_margin_bottom {
+      margin-bottom: 10px;
+    }
+
+    /*内容div外距顶部10px*/
+    .content_margin_top {
+      /* margin-top:10px; */
+    }
+
+    /*内容距底部10px*/
+    .content_padding_bottom {
+      padding-bottom: 10px;
+    }
+
+    /*内容距顶部10px*/
+    .content_padding_top {
+      padding-top: 10px;
+    }
+
+    /*div左上边框 style1*/
+    .left_top_border {
+      BORDER-left: #000000 1px solid;
+      BORDER-top: #000000 1px solid;
+    }
+
+    /*div左上右边框 style3*/
+    .left_top_right_border {
+      BORDER-left: #000000 1px solid;
+      BORDER-top: #000000 1px solid;
+      BORDER-right: #000000 1px solid;
+    }
+
+    /*div左上下边框 style4*/
+    .left_top_bottom_border {
+      BORDER-left: #000000 1px solid;
+      BORDER-top: #000000 1px solid;
+      BORDER-BOTTOM: #000000 1px solid;
+    }
+
+    /*div左上右下边框*/
+    .left_top_right_bottom_border {
+      BORDER-left: #000000 1px solid;
+      BORDER-top: #000000 1px solid;
+      BORDER-right: #000000 1px solid;
+      BORDER-BOTTOM: #000000 1px solid;
+    }
+
+    /*div上右边框 style2*/
+    .top_right_border {
+      BORDER-top: #000000 1px solid;
+      BORDER-right: #000000 1px solid;
+    }
+
+    /*div上右下边框 style14*/
+    .top_right_bottom_border {
+      BORDER-top: #000000 1px solid;
+      BORDER-right: #000000 1px solid;
+      BORDER-BOTTOM: #000000 1px solid;
+    }
+
+    /*div左右下边框 */
+    .left_right_bottom_border {
+      BORDER-left: #000000 1px solid;
+      BORDER-right: #000000 1px solid;
+      BORDER-BOTTOM: #000000 1px solid;
+    }
+
+    /*div左右边框 */
+    .left_right_border {
+      BORDER-left: #000000 1px solid;
+      BORDER-right: #000000 1px solid;
+    }
+
+    /*div左右边框 */
+    .bottom_right_border {
+      BORDER-BOTTOM: #000000 1px solid;
+      BORDER-right: #000000 1px solid;
+    }
+
+    /*表格左边框*/
+    .left_border {
+      BORDER-left: #000000 1px solid;
+    }
+
+    /*表格右边框*/
+    .right_border {
+      BORDER-right: #000000 1px solid;
+    }
+
+    /*表格上边框*/
+    .top_border {
+      BORDER-top: #000000 1px solid;
+    }
+
+    /*表格下边框*/
+    .bottom_border {
+      BORDER-BOTTOM: #000000 1px solid;
+    }
+
+    /*span内容下划线*/
+    .span_underline {
+      BORDER-BOTTOM: #000000 1px solid;
+      line-height: 14px;
+    }
+
+
+    /*半个空格宽度*/
+    .half_space_width {
+      display: inline-block;
+      width: 8px;
+    }
+
+    /*一个空格宽度*/
+    .one_space_width {
+      display: inline-block;
+      width: 16px;
+    }
+
+    /*2个汉字宽度*/
+    .two_font_size_width {
+      display: inline-block;
+      width: 40px;
+      white-space: nowrap;
+    }
+
+    /*3个汉字宽度*/
+    .three_font_size_width {
+      display: inline-block;
+      width: 55px;
+      white-space: nowrap;
+    }
+
+    /*4个汉字宽度*/
+    .four_font_size_width {
+      display: inline-block;
+      width: 70px;
+      white-space: nowrap;
+    }
+
+    /*4.5个汉字宽度*/
+    .four_five_font_size_width {
+      display: inline-block;
+      width: 78px;
+      white-space: nowrap;
+    }
+
+    /*5个汉字宽度*/
+    .five_font_size_width {
+      display: inline-block;
+      width: 90px;
+      white-space: nowrap;
+    }
+
+    /*6个汉字宽度*/
+    .six_font_size_width {
+      display: inline-block;
+      width: 110px;
+      white-space: nowrap;
+    }
+
+    .six_font_size_width_two {
+      width: 110px;
+      white-space: nowrap;
+    }
+
+    /*7个汉字宽度*/
+    .seven_font_size_width {
+      display: inline-block;
+      width: 125px;
+      white-space: nowrap;
+    }
+
+    /*9个汉字宽度*/
+    .nine_font_size_width {
+      display: inline-block;
+      width: 150px;
+      white-space: nowrap;
+    }
+
+    /*10个汉字宽度*/
+    .ten_font_size_width {
+      display: inline-block;
+      width: 170px;
+      white-space: nowrap;
+    }
+
+    /*12个汉字宽度*/
+    .twelve_font_size_width {
+      display: inline-block;
+      width: 200px;
+      white-space: nowrap;
+    }
+
+    /*13个汉字宽度*/
+    .thirteen_font_size_width {
+      display: inline-block;
+      width: 235px;
+      white-space: nowrap;
+    }
+
+    /*15个汉字宽度*/
+    .fifteen_font_size_width {
+      display: inline-block;
+      width: 250px;
+      white-space: nowrap;
+    }
+
+    /*16个汉字宽度*/
+    .sixteen_font_size_width {
+      display: inline-block;
+      width: 270px;
+      white-space: nowrap;
+    }
+
+    /*17个汉字宽度*/
+    .seventeen_font_size_width {
+      display: inline-block;
+      width: 300px;
+      white-space: nowrap;
+    }
+
+    /*18个汉字宽度*/
+    .eighteen_font_size_width {
+      display: inline-block;
+      width: 320px;
+      white-space: nowrap;
+    }
+
+    /*22个汉字宽度*/
+    .twentytwo_font_size_width {
+      display: inline-block;
+      width: 400px;
+      white-space: nowrap;
+    }
+
+
+    /*27个汉字宽度*/
+    .twentyseven_font_size_width {
+      display: inline-block;
+      width: 450px;
+      white-space: nowrap;
+    }
+
+    /*29个汉字宽度*/
+    .twentynine_font_size_width {
+      display: inline-block;
+      width: 480px;
+      white-space: nowrap;
+    }
+
+    /*30个汉字宽度*/
+    .thirsty_font_size_width {
+      display: inline-block;
+      width: 500px;
+      white-space: nowrap;
+    }
+
+    /*35个汉字宽度*/
+    .thirstyfive_font_size_width {
+      display: inline-block;
+      width: 560px;
+      white-space: nowrap;
+    }
+
+    /*40个汉字宽度*/
+    .forty_font_size_width {
+      display: inline-block;
+      width: 600px;
+      white-space: nowrap;
+    }
+
+    /*43个汉字宽度*/
+    .fortythree_font_size_width {
+      display: inline-block;
+      width: 700px;
+      white-space: nowrap;
+    }
+
+    /*整行宽度 794*/
+    .whole_line_size_width {
+      display: inline-block;
+      width: 794px;
+    }
+
+    /*分页*/
+    .PageNext {
+      page-break-after: always;
+    }
+
+    .block_span {
+      display: block;
+      float: left;
+    }
+
+    /*两端对齐，间隔半个字*/
+    .half_font_align_both_side {
+      letter-spacing: 8px;
+    }
+
+    /*两端对齐，间隔一个字*/
+    .one_font_align_both_side {
+      letter-spacing: 16px;
+    }
+
+    /*两端对齐，间隔一个半字*/
+    .onehalf_font_align_both_side {
+      letter-spacing: 24px;
+    }
+
+    /*两端对齐，间隔两个字*/
+    .two_font_align_both_side {
+      letter-spacing: 32px;
+    }
+
+    .font_size {
+      font-size: 12px;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked+label {
+      padding-left: 16px;
+      background: url('./checked.png') no-repeat 0px 1px;
+      background-size: 17px 17px;
+    }
+
+    input[type="checkbox"]:not(:checked)+label {
+      padding-left: 16px;
+      background: url('./unchecked.png') no-repeat 0px 1px;
+      background-size: 17px 17px;
+    }
+
+    .mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      background: #ffffff;
+    }
+  </style>
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+  <div style="position: relative;">
+    <div class="mask"></div>
+    <div id="viewContent" style="transform-origin:top;">
+      <div class="A4Portrait" id="page1">
+        <div style="height: 92%; font-size: 16px;">
+          <div id="01" style="margin:0 auto;text-align: center;width: 794px;">
+            <br>
+            <!--抬头-->
+            <div contenteditable="true"
+              style="font-size: 20px;width: 100%; text-align: center; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(0, 0, 0);">
+              XXXX
+            </div>
+            <!--标题-->
+            <div>
+              <div class=" center_textAlign " contenteditable="true" style="font-size: 17px;">
+                <table width="794" align="center" cellpadding="0" cellspacing="0" contenteditable="true">
+                  <tbody>
+                    <tr>
+                      <td width="210" height="50">&nbsp;</td>
+                      <td width="360" class="first_title_line">夫精人工授精治疗病历（女方）</td>
+                      <td width="224">
+                        <table width="90%" border="0" cellspacing="0" cellpadding="2">
+                          <tbody>
+                            <tr>
+                              <td width="80px"><span class="four_font_size_width">周期序号</span></td>
+                              <td style="width: 60%; padding-bottom: 0px;">
+                                XXXX</td>
+                            </tr>
+                            <tr>
+                              <td>病 历 号</td>
+                              <td style="padding-bottom: 0px;">XXXX</td>
+                            </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <br />
+
+            <!-- 基本信息 -->
+            <div>
+              <div class="paragraph" contenteditable="true" style="line-height: 33px; letter-spacing: 1px;width:792px;">
+                <div class="content_margin_top">
+                  <span class="two_font_size_width">女方:</span>
+                  <span class="seven_font_size_width span_underline center_textAlign">xxx</span>
+                  <span class="two_font_size_width right_textAlign">年龄:</span>
+                  <span class="two_font_size_width span_underline center_textAlign">xxx</span>岁
+                  <span class="three_font_size_width right_textAlign">男方:</span>
+                  <span class="four_font_size_width span_underline">xxx</span>
+                  <span class="four_font_size_width">不孕年限:</span>
+                  <span class="two_font_size_width span_underline center_textAlign">72</span>月
+                  <span class="two_font_size_width">职业:</span>
+                  <span class="nine_font_size_width names_six span_underline">xxx</span>
+                </div>
+                <div class="content_margin_top">
+                  <span class="four_font_size_width">文化程度:</span>
+                  <span class="six_font_size_width span_underline center_textAlign">XXX</span>
+                  <span class="five_font_size_width">身份证号码:</span>
+                  <span class="thirteen_font_size_width span_underline center_textAlign">342221198706202069</span>
+                  <span class="four_font_size_width">手机号码:</span>
+                  <span class="ten_font_size_width span_underline">17844778990</span>
+                </div>
+                <div class="content_margin_top">
+                  <span class="four_font_size_width">家庭住址:</span>
+                  <span class="twentyseven_font_size_width span_underline">安徽省宿州市山县周寨镇赵楼联村赵楼023</span>
+                  <span class="four_font_size_width right_textAlign">住宅电话:</span>
+                  <span class="ten_font_size_width span_underline">17844778990</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 主诉 -->
+            <div>
+              <div class="paragraph" contenteditable="true" style="line-height: 33px;width:792px;">
+                <div class="content_margin_top">
+                  <span class="four_font_size_width">
+                    <span class="two_font_align_both_side">主</span>诉:
+                  </span>
+                  <span class="inline_span span_underline fortythree_font_size_width">xxx</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 现病史 -->
+            <div>
+              <div class="paragraph divBlock" contenteditable="true"
+                style="line-height: 28px; border-bottom-style: solid; border-bottom-width: 0px;">
+                <span class="four_five_font_size_width">
+                  <span class="half_font_align_both_side">现病</span>史:
+                </span>
+                <div style="height:250px;">
+                  <span class="one_space_width"></span>
+                  <span>xxx</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 月经史 -->
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 32px;">
+              <div class="">
+                <span class="four_font_size_width">月 经 史:</span>
+                <span class="seven_font_size_width span_underline center_textAlign"></span>
+                <span class="four_font_size_width">末次月经:</span>
+                <span class="nine_font_size_width span_underline center_textAlign"></span>
+                <span class="two_font_size_width">经量:</span>
+                <span class="seven_font_size_width span_underline center_textAlign"></span>
+                <span class="two_font_size_width">痛经:</span>
+                <span class="six_font_size_width span_underline center_textAlign"></span>
+              </div>
+            </div>
+
+            <!-- 婚育史  -->
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 31px; font-size: 16px;">
+              <div class="divBlock">
+                <span class="four_font_size_width">婚 育 史:</span>
+                <span>足月产:</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>早产:</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>自然流产:</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>人工流产:</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>异位妊娠(患侧):</span>
+                <span class="span_underline six_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width"></span>
+                <span>结局:</span>
+                <span class="span_underline" style="display:inline-block;width: 655px;white-space: nowrap;"></span>
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width"></span>
+                <span>引产:</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>末次妊娠时间:</span>
+                <span class="span_underline seven_font_size_width center_textAlign"></span>
+                <span>结局:</span>
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+                <span>育有:子</span>
+                <span class="span_underline three_font_size_width center_textAlign"></span>
+                （<span class="span_underline five_font_size_width center_textAlign"></span>）
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width"></span>
+                <span>女:</span>
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+                （<span class="span_underline seven_font_size_width center_textAlign"></span>）
+                <span class="two_font_size_width">再婚:</span>
+                <span class="six_font_size_width">
+                  <input style="display: inline-block;" disabled="disabled" checked type="checkbox">否
+                  <input style="display: inline-block;" disabled="disabled" type="checkbox">是
+                </span>
+              </div>
+            </div>
+
+            <!-- 过敏史 -->
+            <div>
+              <div class="paragraph" contenteditable="true" style="line-height: 33px;width:792px;">
+                <div class="content_margin_top">
+                  <span>
+                    <span class="half_font_align_both_side">过敏</span>史:
+                  </span>
+                  <span class="inline_span">
+                    <input style="display: inline-block;" disabled checked type="checkbox">否
+                    <input style="display: inline-block;" disabled type="checkbox">是
+                    <span class="span_underline" style="display:inline-block;width: 622px;white-space: nowrap;"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 既往史 -->
+            <div class="divBlock" contenteditable="true" style="width: 100%;">
+              <div class="divBlock">
+                <span class="four_font_size_width">既 往 史:</span>
+                <span class="span_underline fortythree_font_size_width"></span>
+              </div>
+            </div>
+
+            <!-- 家族史 -->
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 32px;">
+              <div class="divBlock">
+                <span class="four_font_size_width">家 族 史:</span>
+                <span class="span_underline fortythree_font_size_width">
+                  否认家族性遗传疾病
+                </span>
+              </div>
+            </div>
+
+            <!-- 女方体检 -->
+            <div>
+              <div class="divBlock" contenteditable="true"
+                style="width: 100%; text-align: center; border-bottom-style: solid; border-bottom-width: 1px;padding: 10px 0">
+                <label style="font-weight: bold;">女方体检</label>
+              </div>
+            </div>
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 33px; font-size: 16px;">
+              <div>
+                <span class="three_font_size_width" style="font-weight: bold;">体检</span>
+                <span>T:</span><span class="three_font_size_width span_underline center_textAlign">37</span>°C
+                <span>P:</span><span class="three_font_size_width span_underline center_textAlign">78</span>次/分
+                <span>R:</span><span class="three_font_size_width span_underline center_textAlign">18</span>次/分
+                <span>BP:</span><span class="four_font_size_width span_underline center_textAlign">115/75</span>mmHg
+                <span>身高:</span><span class="three_font_size_width span_underline center_textAlign">165</span>cm
+                <span>体重:</span><span class="three_font_size_width span_underline center_textAlign">48</span>kg
+              </div>
+              <div>
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span>发育:</span><span class="three_font_size_width span_underline center_textAlign">正常</span>
+                <span>营养:</span><span class="three_font_size_width span_underline center_textAlign">--</span>
+                <span>皮肤:</span><span class="four_font_size_width span_underline center_textAlign">正常</span>
+                <span>浅表淋巴结:</span>
+                <span class="three_font_size_width span_underline center_textAlign">正常</span>
+                <span>五官:</span><span class="three_font_size_width span_underline center_textAlign">--</span>
+                <span>甲状腺:</span><span class="three_font_size_width span_underline center_textAlign">--</span>
+              </div>
+              <div>
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span>胸廓:</span><span class="three_font_size_width span_underline center_textAlign">---</span>
+                <span>乳房:</span><span class="three_font_size_width span_underline center_textAlign">--</span>
+                <span>心律:</span><span class="three_font_size_width span_underline center_textAlign"></span>
+                <span>杂音:</span><span class="three_font_size_width span_underline center_textAlign"></span>
+                <span>肺:</span><span class="three_font_size_width span_underline center_textAlign"></span>
+                <span>肝脾:</span><span class="three_font_size_width span_underline center_textAlign"></span>
+                <span>肾:</span><span class="four_font_size_width span_underline center_textAlign"></span>
+              </div>
+              <div>
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span>体毛分布:</span> <span class="five_font_size_width span_underline center_textAlign">正常</span>
+                <span>四肢:</span><span class="five_font_size_width span_underline center_textAlign">正常</span>
+              </div>
+            </div>
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 34px;">
+              <div class="divBlock">
+                <span class="three_font_size_width" style="font-weight: bold;">妇检</span>
+                <span>外阴:</span><span class="ten_font_size_width span_underline center_textAlign">已婚未产式</span>
+                <span class="nine_font_size_width"></span>
+                <span>阴毛分布:</span><span class="ten_font_size_width span_underline center_textAlign">女性型</span>
+              </div>
+              <div class="divBlock">
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span class="two_font_size_width">阴道:</span>
+                <span class="one_space_width"></span>白带:
+                <span class="three_font_size_width span_underline center_textAlign"></span>
+                <span>颜色:</span><span class="three_font_size_width span_underline center_textAlign"></span>
+                <span>气味:</span> <span class="three_font_size_width span_underline center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span>宫颈:</span> <span class="seven_font_size_width span_underline center_textAlign"></span>,
+                <span class="twentynine_font_size_width span_underline"></span>
+              </div>
+              <div class="divBlock">
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span class="two_font_size_width">子宫:</span>
+                <span class="one_space_width"></span>位置:
+                <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span class="two_font_size_width">质地:</span><span
+                  class="four_font_size_width span_underline center_textAlign"></span>
+                <span class="two_font_size_width">大小:</span><span
+                  class="eighteen_font_size_width span_underline center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span class="two_font_size_width"></span>
+                <span class="one_space_width"></span>压痛:
+                <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span>活动度:</span><span class="seven_font_size_width span_underline center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span class="two_font_size_width">附件:</span>
+                <span class="one_space_width"></span>左:
+                <span>压痛:</span> <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span>增厚:</span> <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span>包块:</span> <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span>大小及性质:</span> <span class="seven_font_size_width span_underline center_textAlign">--</span>
+              </div>
+              <div class="divBlock">
+                <span class="three_font_size_width" style="font-weight: bold;"></span>
+                <span class="two_font_size_width"></span>
+                <span class="one_space_width"></span>右:
+                <span>压痛:</span> <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span>增厚:</span> <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span>包块:</span> <span class="four_font_size_width span_underline center_textAlign"></span>
+                <span>大小及性质:</span> <span class="seven_font_size_width span_underline center_textAlign">--</span>
+              </div>
+            </div>
+            <div>
+              <div style="position: relative;">
+                <div style="line-height: 34px; margin-top: 10px;position: absolute;right:0">
+                  <span class="two_font_size_width"></span>
+                  <span class="seven_font_size_width span_underline center_textAlign"></span>
+                </div>
+              </div>
+              <div style="position: relative;">
+                <div style="line-height: 34px; margin-top: 10px;position: absolute;left:0;top:44px">
+                  <span class="four_font_size_width">治疗方案:</span>
+                  <span class="seven_font_size_width span_underline center_textAlign"></span>
+                </div>
+                <div style="line-height: 34px; margin-top: 10px;position: absolute;right:0;top:44px">
+                  <span class="two_font_size_width">日期:</span>
+                  <span class="seven_font_size_width span_underline center_textAlign"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="HeaderStyle1 bottom_border FooterStyle1" style="width: 0;"></div>
+      </div>
+
+      <div class="PageNext"></div>
+
+      <div class="A4Portrait" id="page2">
+        <div style="height: 92%; font-size: 16px;">
+          <div id="01" style="margin:0 auto;text-align: center;width: 794px;">
+            <br>
+            <!--抬头-->
+            <div contenteditable="true"
+              style="width: 100%; text-align: center; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(0, 0, 0); font-size: 20px;">
+              XXXX
+            </div>
+            <!--标题-->
+            <div>
+              <div class=" center_textAlign " contenteditable="true" style="font-size: 17px;">
+                <table width="794" align="center" cellpadding="0" cellspacing="0" contenteditable="true">
+                  <tbody>
+                    <tr>
+                      <td width="210" height="50">&nbsp;</td>
+                      <td width="360" class="first_title_line">夫精人工授精治疗病历（男方）</td>
+                      <td width="224">
+                        <table width="90%" border="0" cellspacing="0" cellpadding="2">
+                          <tbody>
+                            <tr>
+                              <td width="80px"><span class="four_font_size_width">周期序号</span></td>
+                              <td style="width: 60%; padding-bottom: 0px;">
+                                XXXX</td>
+                            </tr>
+                            <tr>
+                              <td>病 历 号</td>
+                              <td style="padding-bottom: 0px;">XXXX</td>
+                            </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <br />
+            <!-- 基本信息 -->
+            <div>
+              <div class="paragraph divBlock" contenteditable="true" style="line-height: 32px;">
+                <div class=" ">
+                  <span class="two_font_size_width">姓名:</span>
+                  <span class="five_font_size_width span_underline">孙涛涛</span>
+                  <span class="two_font_size_width ">年龄:</span>
+                  <span class="three_font_size_width span_underline center_textAlign">15</span>岁
+                  <span class="two_font_size_width">配偶:</span>
+                  <span class="four_font_size_width span_underline">孙莎莎</span>
+                  <span class="two_font_size_width ">年龄:</span>
+                  <span class="three_font_size_width span_underline center_textAlign">29</span>岁
+                  <span class="four_font_size_width ">证件号码:</span>
+                  <span class="ten_font_size_width  span_underline center_textAlign">341225190909091234</span>
+                </div>
+                <div class=" ">
+                  <span class="two_font_size_width">民族:</span>
+                  <span class="four_font_size_width  span_underline center_textAlign"></span>
+                  <span class="two_font_size_width ">职业:</span>
+                  <span class="seven_font_size_width span_underline center_textAlign"></span>
+                  <span class="four_font_size_width ">文化程度:</span>
+                  <span class="seven_font_size_width span_underline center_textAlign">博士及其以上</span>
+                  <span class="four_font_size_width ">联系方式:</span>
+                  <span class="ten_font_size_width span_underline center_textAlign"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 主诉 -->
+            <div>
+              <div class="paragraph" contenteditable="true" style="line-height: 33px;width:792px;">
+                <div class="content_margin_top">
+                  <span class="four_font_size_width">
+                    <span class="two_font_align_both_side">主</span>诉:
+                  </span>
+                  <span class="inline_span span_underline fortythree_font_size_width">xxx</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 现病史 -->
+            <div>
+              <div class="paragraph divBlock" contenteditable="true"
+                style="line-height: 28px; border-bottom-style: solid; border-bottom-width: 0px;">
+                <span class="four_five_font_size_width">
+                  <span class="half_font_align_both_side">现病</span>史:
+                </span>
+                <div style="height:250px;">
+                  <span class="one_space_width"></span>
+                  <span>xxx</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 既往史 -->
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 32px; font-size: 16px;">
+              <div class="divBlock">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side">既往</span>史
+                </span>
+                <span>嗅觉异常</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>腮腺炎</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>性传播疾病</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>睾丸附睾炎</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>前列腺炎</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>结核</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side"></span>
+                </span>
+                <span>糖尿病</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>
+                <span>肝炎</span>
+                <span class="span_underline three_font_size_width center_textAlign"></span>
+                <span>生殖系统外伤史</span>
+                <span class="span_underline three_font_size_width center_textAlign"></span>
+                <span class="one_space_width"></span>
+                <span>其它</span>
+                <span class="span_underline thirteen_font_size_width"></span>
+              </div>
+              <div class="divBlock">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side"></span>
+                </span>
+                <span class="four_font_size_width">长期用药</span>
+                <span class="span_underline forty_font_size_width"></span>
+              </div>
+              <div class="divBlock" contenteditable="true">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side"></span>
+                </span>
+                <span class="four_font_size_width">手术史</span>
+                <span class="span_underline forty_font_size_width"></span>
+              </div>
+            </div>
+
+            <!-- 个人史 -->
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 36px; font-size: 16px;">
+              <div class="divBlock" contenteditable="true">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side">个人</span>史
+                </span>
+                <span>吸烟</span>
+                <span class="span_underline" style="display:inline-block;width: 180px;word-break:break-all;"></span>
+                <span>酗酒</span>
+                <span class="span_underline ten_font_size_width center_textAlign"></span>
+                <span>高温作业</span>
+                <span class="span_underline ten_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock" contenteditable="true">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side"></span>
+                </span>
+                <span>药物过敏史</span>
+                <span class="span_underline thirteen_font_size_width center_textAlign"></span>
+                <span>接触生殖毒性物质</span>
+                <span class="span_underline thirteen_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side"></span>
+                </span>
+                <span>吸毒</span>
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+                <span>接触放射线</span>
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+                <span>习惯性泡澡或蒸桑拿浴</span>
+                <span class="span_underline three_font_size_width center_textAlign"></span>
+                <span>其它</span>
+                <span class="span_underline nine_font_size_width"></span>
+              </div>
+            </div>
+
+            <!-- 婚育史 -->
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 31px;">
+              <div class="divBlock">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side">婚育</span>史
+                </span>
+                <span>初婚</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>岁，
+                <span>再婚</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>岁，
+                <span>避孕</span>
+                <span class="span_underline three_font_size_width center_textAlign"></span>年，
+                <span>受孕</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>次，
+                <span>生育</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>次
+              </div>
+              <div class="divBlock">
+                <span class="second_title_blod four_font_size_width">
+                  <span class="half_font_align_both_side"></span>
+                </span>
+                <span>自然流产</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>次，
+                <span>人工流产</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>次，
+                <span>现有子女</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>，
+                <span>领养子女</span>
+                <span class="span_underline two_font_size_width center_textAlign"></span>，
+                <span>其他</span>
+                <span class="span_underline four_font_size_width"></span>
+              </div>
+            </div>
+
+            <!-- 家族史 -->
+            <div>
+              <div class="paragraph" contenteditable="true" style="line-height: 33px;width:792px;">
+                <div class="content_margin_top">
+                  <span class="second_title_blod four_font_size_width">
+                    <span class="half_font_align_both_side">家族</span>史
+                  </span>
+                  <span class="span_underline fortythree_font_size_width">
+                    否认家族病史</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 男方体检 -->
+            <div>
+              <div class="divBlock" contenteditable="true"
+                style="width: 100%; text-align: center; border-bottom-style: solid; border-bottom-width: 1px;padding:10px 0">
+                <label style="font-weight: bold;">男方体检</label>
+              </div>
+            </div>
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 32px;">
+              <div class="divBlock">
+                <span class="four_font_size_width" style="font-weight: bold;">一般检查</span>
+                <span>身高</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>cm
+                <span class="one_space_width"></span>
+                <span>体重</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>kg
+                <span class="one_space_width"></span>
+                <span>血压</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>mmHg
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width" style="font-weight: bold;"></span>
+                <span>胡须</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>&nbsp;
+                <span class="one_space_width"></span>
+                <span>喉结</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>&nbsp;
+                <span class="one_space_width"></span>
+                <span>乳房</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>
+              </div>
+            </div>
+            <div class="divBlock" contenteditable="true" style="width: 100%; line-height: 32px;">
+              <div class="divBlock">
+                <span class="four_font_size_width" style="font-weight: bold;">男科检查</span>
+                <span>阴毛</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>
+                <span class="one_space_width"></span>
+                <span>阴茎长度</span>
+                <span class="span_underline five_font_size_width center_textAlign"></span>cm
+                <span class="one_space_width"></span>
+                <span>外观</span>
+                <span class="span_underline fifteen_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width" style="font-weight: bold;"></span>
+                <span class="four_font_size_width">睾丸体积</span>
+                <span class="one_space_width"></span>左
+                <span class="span_underline four_font_size_width center_textAlign"></span>ml
+                <span class="one_space_width"></span>右
+                <span class="span_underline four_font_size_width center_textAlign"></span>ml
+                <span class="one_space_width"></span>
+                <span class="three_font_size_width">质地</span>
+                <span class="one_space_width"></span>左
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+                <span class="one_space_width"></span>右
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width" style="font-weight: bold;"></span>
+                <span class="four_font_size_width">附睾</span>
+                <span class="one_space_width"></span>左
+                <span class="span_underline four_font_size_width center_textAlign"></span>&nbsp;
+                <span class="one_space_width"></span>右
+                <span class="span_underline four_font_size_width center_textAlign"></span>&nbsp;
+                <span class="one_space_width"></span>
+                <span class="three_font_size_width">输精管</span>
+                <span class="one_space_width"></span>左
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+                <span class="one_space_width"></span>右
+                <span class="span_underline four_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width" style="font-weight: bold;"></span>
+                <span class="four_font_size_width">精索静脉</span>
+                <span class="one_space_width"></span>左
+                <span class="span_underline sixteen_font_size_width center_textAlign"></span>
+                <span class="one_space_width"></span>右
+                <span class="span_underline sixteen_font_size_width center_textAlign"></span>
+              </div>
+              <div class="divBlock">
+                <span class="four_font_size_width" style="font-weight: bold;"></span>
+                <span>前列腺</span>
+                <span class="span_underline" style="display:inline-block;width: 655px;white-space: nowrap;"></span>
+              </div>
+            </div>
+            <div style="position: relative;">
+              <div style="line-height: 34px; margin-top: 10px;position: absolute;right:0">
+                <span class="two_font_size_width"></span>
+                <span class="seven_font_size_width span_underline center_textAlign"></span>
+              </div>
+            </div>
+            <div style="position: relative;">
+              <div style="line-height: 34px; margin-top: 10px;position: absolute;right:0;top:44px">
+                <span class="two_font_size_width">日期:</span>
+                <span class="seven_font_size_width span_underline center_textAlign"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+</body>
+
+</html>
